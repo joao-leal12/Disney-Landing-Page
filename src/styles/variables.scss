@@ -1,0 +1,26 @@
+@font-face{ 
+    font-family: 'Avenir'; 
+    src: url('../fonts/AvenirCondensedHand.ttf') format('TrueType'); 
+
+}
+
+//Colors 
+$bgColor: #040714;  
+$colorBorder: #f9f9f9; 
+$collorLetter: #040714;
+$colorPrimary: #fff; 
+$colorSubscribre:  rgba(0, 99, 229, 255);
+$colorSybscribreHover: #016cf9;
+$bgButton:#6421ff ; 
+$bgDark: rgba(0,0,0,0.8); 
+$borderModeDark: silver;  
+$colorParagraph: rgb(192, 192, 192);  
+$colorAnswersSection: #13151D;
+//fonst 
+$fontMain: "Helvetica", sans-serif;     
+$fontBanner: 'Avenir';  
+
+//Tamanhos 
+
+$SizeLg: 1024px; 
+$SizeMd: 768px; 

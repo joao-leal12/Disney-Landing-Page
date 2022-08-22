@@ -1,0 +1,157 @@
+@use '../variables.scss';
+@use '../mixins.scss'; 
+@keyframes bounce {
+    0%{ 
+        padding-top: 20px ;
+    } 
+    70%{ 
+        padding-top: 10px; 
+    }
+    100%{ 
+        padding-top: 0; 
+    }
+}
+
+#Banner{ 
+    @include mixins.Flex(row, flex-start,center); 
+    position: relative; 
+    min-height: 100vh;    
+    width: 100%; 
+    padding: 5.6vw; 
+    
+    .Hero{
+        background: url('../../assets/assets/mainbanner.jpg') no-repeat; 
+        background-size: 100%; 
+        position: absolute; 
+        top:0;
+        right:0;
+        bottom:0;
+        left:0; 
+        z-index:-2;  
+    }
+    .ContentHero{ 
+        max-width: 640px; 
+        width: 50%; 
+        
+        h3{
+            margin-bottom: 24px; 
+            font-size: 2.8rem; 
+            line-height: 3.8rem; 
+            font-weight: 700; 
+            color: variables.$colorBorder;
+            text-align: center; 
+            letter-spacing: normal ;
+        }
+        .picture{ 
+            max-width: 320px; 
+            margin:0 auto 2vw auto ; 
+            
+            img{ 
+                display: block ; 
+            }
+        }
+        .btnAction{ 
+            @include mixins.Flex(row, space-around,normal,wrap);
+            margin: 0 -12px;
+            padding-left: 0; 
+            .ContainerButton{ 
+                flex: 0 0 100%; 
+                max-width: 100%; 
+                @include mixins.Flex(column, space-between, center);
+                padding: 12px; 
+               .btn{ 
+                    text-transform: uppercase;
+                    height: 68px; 
+                    width: 100%; 
+                    max-width: 700px; 
+                    padding: 20.5px 33px; 
+                    margin-bottom: 21px; 
+                    background: variables.$bgButton; 
+                    color: variables.$colorBorder; 
+                    
+                  
+               }
+            }
+        }
+    }
+    #buttonaction{ 
+        position: absolute;
+        display: block; 
+        z-index: 5; 
+        width: 4.8rem; 
+        background-color: transparent; 
+        border: none; 
+        height: 4.8rem; 
+        padding: .6rem; 
+        left: 5.6vw; 
+        bottom: 2vw; 
+        filter: brightness(70%); 
+        margin-left: -14px; 
+        animation: bounce 1.75s infinite;
+        &:hover{ 
+            filter: none; 
+        }
+        span{ 
+            svg{ 
+                fill: variables.$colorBorder; 
+            }
+        }
+    }
+} 
+
+
+//media query 
+
+@media (max-width: variables.$SizeLg){
+    #Banner{ 
+        padding-top: 54vw; 
+        align-items: flex-start;
+        justify-content: center;
+        .Hero{
+            background: url('../../assets/assets/bannerlg.jpg') no-repeat; 
+            background-size: 100%; 
+        }
+        .ContentHero{ 
+            max-width: 600px; 
+            width: 100%; 
+            h3{
+                margin-bottom: 16px;  
+                font-size: 2.4rem; 
+                line-height: 2.4rem;
+            }
+            .picture{ 
+                margin-bottom: 3vw;
+            }
+        }
+    }
+} 
+
+@media (max-width: variables.$SizeMd){ 
+
+    #Banner{ 
+        min-height: 70vh; 
+        .ContentHero{
+            max-width: 500px; 
+            width: 100%; 
+            h3{
+                font-size: 2.2rem;
+                line-height: 3.2rem; 
+            }
+            .picture{ 
+                max-width: 180px; 
+            }
+            .btnAction{ 
+                .ContainerButton{ 
+                    .btn{ 
+                        max-width: 540px; 
+                        padding: 11.5px 24px;
+                        margin-bottom: 20px; 
+                        font-size: 1.5rem; 
+                        line-height: 1.5rem; 
+                        height: 50px; 
+                    }
+                }
+            }
+        }
+    }
+}

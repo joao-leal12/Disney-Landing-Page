@@ -1,0 +1,176 @@
+@use '../variables.scss'; 
+@use '../mixins.scss'; 
+
+#Plan{ 
+    @include mixins.Flex(column);  
+    padding: 5.6vw ; 
+    position: relative;  
+    width: 100%;
+     
+    h2{  
+        letter-spacing: normal;  
+        margin-bottom: 3rem;    
+        font-size: 4.4rem; 
+        line-height: 5.4rem; 
+        font-weight: 700; 
+        color: variables.$colorBorder; 
+    }
+    .grid{ 
+        @include mixins.Flex(row, space-around, normal, nowrap, 2.4rem);  
+        padding-left: 0; 
+        margin: 20px 0;  
+        grid-gap: 2.4rem; 
+        letter-spacing: .2px; 
+   
+
+        .choose-Style{ 
+            line-height: 3rem; 
+            max-width: 380px; 
+            width: 100%;  
+            transition: opacity 1s; 
+            padding: 60px 44px 0; 
+            flex: 0 0 calc(33.3% - 16px); 
+            h3{ 
+                letter-spacing: .2px;
+                text-align: center;
+                margin-top: 2.4rem; 
+                font-size: 2.8rem; 
+                line-height: 3.8rem; 
+                font-weight: 700; 
+                color: variables.$colorBorder; 
+            } 
+            p  { 
+                font-size: 1.8rem; 
+                line-height: 2.8rem;  
+                color: variables.$colorParagraph; 
+                text-align: center; 
+                font-weight: 400;  
+                
+            }
+            
+            img{ 
+                width: 100%; 
+                max-width:420px;  
+                
+            }
+            .containerAction-btn{ 
+                margin-top: 2.8rem;  
+                width: 100%; 
+                button{ 
+                    color: white; 
+                    background: variables.$bgButton ;  
+                    height: 60px; 
+                    max-width: 360px; 
+                    padding: 25.5px 24px; 
+                    width: 100%;    
+                    @include mixins.Flex; 
+                    span{  
+                        border-radius: 4px; 
+                        margin-top: 1px; 
+                        font-size: 1.8rem; 
+                        line-height: 1.8rem;   
+                        
+                    }
+                }
+            }
+        }
+        
+    }
+   
+     p{ 
+         font-size: 1.2rem; 
+        line-height: 2.2rem; 
+         margin: 0 0 24px;  
+         color: variables.$colorParagraph; 
+     }
+} 
+
+#one { 
+    background: url('../../assets/assets/background.png') no-repeat top;
+    background-size: 100%;   
+    
+} 
+
+@media screen { 
+
+    @media(min-width: 769px) and (max-width: 1024px){ 
+        #Plan{ 
+            h2{ 
+              
+                margin-bottom: 2.4rem; 
+                line-height: 4.2rem; 
+                font-size: 3.2rem; 
+
+            }
+            .grid{ 
+              
+                .choose-Style{ 
+                    @include mixins.Flex(column, space-between); 
+                    padding: 60px 36px 0; 
+                    h3{ 
+                        font-size: 2.4rem; 
+                        line-height: 3.4rem; 
+                    }
+                    p{
+                        font-size: 1.6rem; 
+                        line-height: 2.6rem;
+                    }
+                } 
+                .containerAction-btn{ 
+                    margin-top: 2.4rem; 
+                }
+            }
+        }
+    } /*Media  */
+
+    @media (max-width: 768px){ 
+        section#Plan{
+            
+            padding: 10vw 5vw;  
+            text-align : center; 
+
+            h2{ 
+                font-size: 2.6rem; 
+                line-height: 3.6rem; 
+                margin-bottom: 2.4rem; 
+            }
+            .grid{ 
+                
+               @include mixins.Flex(column); 
+                .choose-Style{ 
+                    h3{ 
+                        font-size: 2.2rem; 
+                        line-height: 3.2rem; 
+                    }
+                    p{ 
+                        text-align: center; 
+                        font-size: 1.5rem; 
+                        line-height: 2.5rem; 
+                    } 
+
+                    &:not(:first-child){ 
+                        margin-top: 4rem; 
+                    }
+                  
+                    .containerAction-btn{ 
+                            margin-top: 2.4rem; 
+                        button { 
+                            height: 50px; 
+                            padding: 11.5px  24px; 
+                            max-width: 320px;  
+                            filter: brightness(1.2); 
+                           span{ 
+                            font-size: 1.5rem; 
+                            line-height: 1.5rem; 
+                           } 
+                        }
+
+                    }   
+                 }
+                }
+            } 
+
+        }
+
+    }
+    

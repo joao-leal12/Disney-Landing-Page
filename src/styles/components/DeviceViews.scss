@@ -1,0 +1,103 @@
+@use '../mixins.scss'; 
+@use '../variables.scss';  
+ul{
+    list-style: none;
+}
+#devViews{  
+    h2{
+        font-size: 4rem; 
+        line-height: 5rem; 
+        color: variables.$colorBorder;  
+        text-align: center; 
+        margin-bottom: 2.4rem; 
+    }
+    padding: 5.6vw;  
+    #deviceComponents{ 
+        display: grid;
+        grid-template-columns: repeat(4,minmax(calc(25% - 18px), 1fr) ) ; 
+        grid-gap: 2.4rem; 
+      
+       
+        .device-component-item{ 
+            @include mixins.Flex(column, flex-start, center); 
+         
+               
+            h3{ 
+                font-size: 2.8rem; 
+                line-height: 3.8rem;
+                font-weight: 700; 
+                margin: 2rem 0 2.4rem 0;  
+                text-align: center; 
+            } 
+
+            ul{
+                li{ 
+                    font-size: 1.8rem; 
+                    line-height: 2.8rem; 
+                    color: variables.$colorParagraph;  
+                    text-align: center;
+                }
+            }
+        }
+    }
+} 
+
+
+@media screen{ 
+    @media(min-width: 769px) and (max-width: 1024px){ 
+            #devViews{ 
+                h2{ 
+                  font-size: 2.8rem; 
+                  line-height: 3.8rem;  
+                } 
+                #deviceComponents{ 
+                    .device-component-item{ 
+                        h3{ 
+                            font-size:2.4rem; 
+                            line-height: 3.4rem; 
+                        }
+                        ul{
+                            
+                            li{ 
+                                font-size: 1.6rem;
+                                line-height: 2.6rem;    
+                            }
+                        }
+                    }
+                }
+            }
+
+    }
+    @media(max-width: 768px){ 
+        #devViews{  
+            h2{
+                font-size: 2.4rem; 
+                line-height: 3.4rem; 
+                
+            } 
+            #deviceComponents{ 
+            
+                grid-template-columns: repeat(2,minmax(calc(25% - 18px), 1fr) ) ; 
+                grid-gap: 2.4rem; 
+              
+                .device-component-item{ 
+                    
+                    @include mixins.Flex(column, flex-start, center); 
+                    
+                    h3{ 
+                        font-size: 2.2rem; 
+                        line-height: 3.2rem;
+                    } 
+                    
+                    ul{
+                        li{ 
+                            font-size: 1.5rem; 
+                            line-height: 2.5rem; 
+                        }
+                    }
+                }
+            }
+        } 
+
+    }
+}

@@ -1,0 +1,168 @@
+@use '../mixins.scss'; 
+@use '../variables.scss';
+
+:root{ 
+    font-size: 10px; 
+}
+header#navbar{ 
+    position: fixed; 
+    right: 0; 
+    left: 0; 
+    z-index: 5;  
+
+#navShow{ 
+    height: 70px; 
+    padding: 0 3.6rem;   
+    transition: all 1s;  
+    position: relative;  
+    .show{ 
+        opacity:1; 
+        transition: opacity 1s;
+        z-index: 5;  
+    }
+    .hidden{ 
+        opacity: 0; 
+        transition: opacity 1s;
+        z-index: -1;  
+    }  
+    @include mixins.Flex(row, flex-end,center); 
+    a{ 
+        background: variables.$bgDark;  
+        border: 1px solid silver;  
+        @include mixins.Flex; 
+        @include mixins.button; 
+    
+        &:hover{ 
+           @include mixins.buttonHover; 
+        }
+    }
+}
+
+#nav{ 
+    padding: 0 3.6rem;  
+    position: relative; 
+    height: 70px;   
+    background-color: variables.$bgColor; 
+    transition: all 1s; 
+    @include mixins.Flex(row, space-between, center, wrap);   
+    .show{ 
+        opacity: 1; 
+        transition: opacity 1s; 
+        z-index: 3; 
+    }
+    .hidden{ 
+        opacity: 0; 
+        transition: opacity 1s;
+        z-index: -1;
+    }
+    .logo{ 
+
+        max-width:180px; 
+        min-width: 1px; 
+        .logoImg{ 
+            padding: 0 14px; 
+        }
+        img{ 
+            width: 80px; 
+            max-width: 100px; 
+        }
+    }
+    .btns{
+        height: 100%;   
+        @include mixins.Flex; 
+        gap: 10px; 
+        .btnSubscribre{
+            height: 50px; 
+            padding: 0.8rem 1.4rem; 
+            font-size: 1.8rem; 
+            color: variables.$colorBorder; 
+            background-color: variables.$colorSubscribre; 
+            text-transform: uppercase;
+            border-radius: 4px;  
+            @include mixins.Flex; 
+            &:hover{ 
+                background-color: variables.$colorSybscribreHover;
+            }
+        }
+        .btnLogin{ 
+            @include mixins.button;  
+            border: 1px solid silver;  
+            background: variables.$bgDark; 
+            @include mixins.Flex; 
+            &:hover{ 
+                @include mixins.buttonHover;
+            }
+        }
+    }
+    
+}
+} 
+
+
+@media screen and  (max-width: variables.$SizeMd){ 
+    
+    
+        header#navbar{ 
+            #nav{ 
+                padding: 0 12px 0 20px; 
+               .logo{
+                    .logoImg{ 
+                       box-sizing: content-box; 
+                        padding: 0 12px; 
+                        width: 64px; 
+                        img{ 
+                            max-height: 52px;
+                            width: 100%; 
+                        }
+                    }
+               }
+               .btns{
+                .btnSubscribre{ 
+                   
+                    height: 40px; 
+                    width: auto;
+                    font-size: 1.5rem; 
+                    line-height: 1.5rem; 
+                }
+                .btnLogin{ 
+                    height: 40px; 
+                    width: auto; 
+                    font-size: 15px; 
+                    line-height: 15px; 
+                    padding: 0 8px;  
+                    background: variables.$bgDark; 
+                    border-color: variables.$borderModeDark; 
+                }
+            }   
+            }
+            
+        }
+       
+} 
+
+
+
+
+
+
+
+header#navbar #navShow.show, 
+header#navbar #nav.show{ 
+
+    opacity: 1; 
+    transition: opacity .5s ease-out; 
+    z-index: 4; 
+    position: absolute; 
+    top: 0; 
+    left: 0;
+    right: 0; 
+    width: 100%; 
+
+}
+
+header#navbar #navShow.hidden, 
+header#navbar #nav.hidden{ 
+    opacity: 0; 
+    z-index: -1;  
+    position: static;
+}

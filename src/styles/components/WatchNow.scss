@@ -1,0 +1,91 @@
+@use '../variables.scss'; 
+@use '../mixins.scss'; 
+
+img{
+    
+    width: 100%; 
+}
+h3, p{ 
+    color:variables.$colorPrimary; 
+}
+
+    #watchNow{ 
+        
+        padding: 5.6vw; 
+        position: relative; 
+        @include mixins.Flex; 
+        .picture{ 
+           
+            flex: 0 0 50%;
+            max-width: 50%; 
+        }  
+        .text-Container{ 
+            padding: 0 2vw; 
+            flex: 0 0 50%; 
+            h3{ 
+                
+                margin-bottom: 2.4rem; 
+                font-size: 4rem; 
+                line-height: 5rem; 
+            }
+            p{
+                color:variables.$colorParagraph; 
+                font-size: 2rem; 
+                line-height: 3rem; 
+                margin-bottom: 2rem; 
+            }
+        }
+    }
+
+
+    @media screen{ 
+        @media (min-width: 769px) and (max-width: 1024px){ 
+            #watchNow{ 
+
+                .text-Container{ 
+                    h3{ 
+                        font-size: 2.8rem; 
+                        line-height: 3.8rem; 
+                        margin-bottom: 1.6rem; 
+                    } 
+                    p{ 
+                        font-size: 1.8rem; 
+                        line-height: 2.8rem; 
+
+                    }
+                }
+            } 
+               
+        
+
+        }
+
+        @media (max-width: 768px){ 
+            #watchNow{ 
+                padding: 10vw 5vw; 
+                @include mixins.Flex(column); 
+                
+                .picture{ 
+                    flex: 0 0 100%; 
+                    max-width: 100%;
+                    margin-bottom: 2rem ;
+                }
+                .text-Container{  
+                    text-align: center; 
+                    h3{ 
+                        font-size: 2.4rem; 
+                        line-height: 3.4rem; 
+                        font-weight: 700; 
+                        margin-bottom: 1.6rem; 
+                    }
+                    p{
+                        font-size: 1.6rem; 
+                        line-height: 2.6rem;
+                        font-weight: 400; 
+                    }
+
+                }
+            } 
+        }
+
+    }

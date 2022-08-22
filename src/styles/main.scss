@@ -1,0 +1,41 @@
+@use './variables.scss'; 
+@use './mixins.scss'; 
+
+*{
+    padding: 0; 
+    margin: 0;
+    box-sizing: border-box; 
+    font-family: variables.$fontMain; 
+} 
+html{ 
+    scroll-behavior: smooth;
+}
+body{ 
+    background-color:variables.$bgColor;
+    letter-spacing: .2px;
+
+}  
+
+:root{ 
+    font-size: 62.5%; 
+}
+
+a{
+    text-decoration: none;  
+    align-items: center;
+    border-radius: 4px;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    text-align: center;
+    transition: all .2s ease 0s;
+    vertical-align: middle;
+    border: none; 
+    font-size: 1.8rem; 
+}
+
+#mainDiv{ 
+   @include mixins.Flex(column, center, center, wrap); 
+    
+}

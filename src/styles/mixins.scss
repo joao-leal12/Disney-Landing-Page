@@ -1,0 +1,28 @@
+@use './variables.scss'; 
+@mixin Flex($direction : row , $justify: center , $align: center, $wrap: nowrap, $gap: auto ) { 
+
+    display: flex; 
+    flex-flow: $direction $wrap;  
+    justify-content: $justify; 
+    align-items: $align; 
+    gap: $gap; 
+
+}   
+
+
+@mixin button { 
+    height: 50px; 
+    padding: .8rem 1.6rem; 
+    font-size: 1.8rem; 
+    margin: 5px;    
+    text-transform: uppercase;
+    color: variables.$colorPrimary; 
+    border-radius: 4px; 
+     
+}
+
+@mixin buttonHover{ 
+    background-color: variables.$colorBorder;
+    color: variables.$collorLetter; 
+    border-color: transparent;  
+}

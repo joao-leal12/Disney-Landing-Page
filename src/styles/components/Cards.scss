@@ -1,0 +1,98 @@
+@use '../mixins.scss'; 
+@use '../variables.scss'; 
+
+img{ 
+    width: 100%; 
+}
+#Cards{
+    @include mixins.Flex(column);  
+ 
+    width: 100%; 
+    padding: 5.6vw; 
+    h2{ 
+        margin-bottom: 2.4rem; 
+        font-size: 4rem; 
+        line-height: 5rem;
+        font-weight: 700; 
+        color: variables.$colorBorder;  
+    }
+    p{ 
+        margin-bottom: 2rem;
+        color: variables.$colorParagraph; 
+        font-size: 2rem; 
+        line-height: 3rem; 
+
+    } 
+    .ContainerCards{
+        display: grid;  
+        gap: 2.4rem; 
+        width: 100%; 
+        grid-template-columns: repeat(3,  1fr);  
+      
+    }
+}  
+
+@media screen{  
+
+    @media (min-width: 769px) and (max-width: 1024px){ 
+        #Cards{ 
+            text-align:center;            
+            padding: 10vw 5vw; 
+            h2{ 
+                width: 100%; 
+                font-size: 2.8rem; 
+                line-height: 3.8rem;
+                font-weight: 700;  
+                margin-bottom: 1.6rem ; 
+            }
+            p{ 
+                
+                font-size: 1.8rem; 
+                line-height: 2.8rem; 
+                font-weight: 400; 
+
+            }
+        }
+    }
+
+    @media(max-width: 768px ){ 
+    
+        #Cards{ 
+            text-align: center; 
+            h2{ 
+                font-size: 2.4rem; 
+                line-height: 3.4rem;  
+                margin-bottom: 1.6rem; 
+            } 
+            p{ 
+                font-size: 1.6rem; 
+                line-height: 2.6rem;  
+                letter-spacing: normal;
+            }
+            .ContainerCards{ 
+               
+                grid-template-columns: repeat(auto-fit,calc(50% - 12px)); 
+                justify-items: center;       
+                
+                .ContainerElementCard{ 
+                    img{ 
+                        border-radius: 4px;
+                     }
+                   
+                    &:last-child{ 
+                        justify-self: center;   
+                        grid-column: 1/3 ;  
+                        text-align: center;
+                        img{
+                            width: 50%; 
+                        }
+                    }
+                }
+                
+            }
+        }
+    }/*EndPoint */
+
+
+
+}

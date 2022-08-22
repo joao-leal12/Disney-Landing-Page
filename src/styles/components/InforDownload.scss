@@ -1,0 +1,72 @@
+@use '../mixins.scss'; 
+@use '../variables.scss'; 
+#inforDownload { 
+
+    padding: 5.6vw; 
+   
+  
+   .container-elements-download{ 
+        position: relative; 
+
+
+    .text-infor-download{ 
+        position: absolute;     
+        left: 50%; 
+        top: 50%; 
+        transform: translateY(-50%);  
+        padding: 0 2vw;     
+        h3{ 
+            font-size: 2.8rem; 
+            line-height: 3.8rem; 
+            color: variables.$colorBorder; 
+            margin-bottom: 2.4rem; 
+            letter-spacing: normal; 
+        }
+        p{ 
+            font-size: 1.8rem; 
+            line-height: 2.8rem; 
+            color: variables.$colorParagraph;  
+            filter: brightness(90%)
+        }
+    }
+ }
+} 
+
+
+@media screen{ 
+    @media(max-width: 769px){ 
+        #inforDownload { 
+           .container-elements-download{ 
+                position: static; 
+                @include mixins.Flex(column, center, center,nowrap, 7rem); 
+        
+            .text-infor-download{ 
+                position: static;   
+                padding: 0 2vw;     
+                h3{ 
+                    text-align: center;
+                    font-size: 2.2rem; 
+                    line-height: 3.2rem; 
+                    color: variables.$colorBorder; 
+                    margin-bottom: 1.6rem; 
+                    letter-spacing: normal; 
+                }
+                p{ 
+                    text-align: center;
+                    font-size: 1.5rem; 
+                    line-height: 2.5rem; 
+                    color: variables.$colorParagraph;  
+                    filter: brightness(90%)
+                }
+            }
+         }
+        } 
+        
+
+
+
+
+
+    }
+
+}

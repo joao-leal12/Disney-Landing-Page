@@ -1,0 +1,15 @@
+<div className="list-answers">
+
+                        <ul>
+                            <li className="item-answers">O Disney+ oferece</li>
+                            <li className="item-answers">
+                             Experiência premium sem intervalos comerciais.
+                            </li>
+                            <li className="item-answers">As melhores histórias da Disney, Pixar, Marvel, Star Wars e National Geographic, tudo em um só lugar.</li>
+                            <li className="item-answers">Groupwatch: assista junto com amigos ou familiares, mesmo separados.</li>
+                            <li className="item-answers">Downloads ilimitados em até 10 dispositivos compatíveis.</li>
+                            <li className="item-answers">Mais de 300 títulos em 4K UHD e HDR.</li>
+                            <li className="item-answers">A possibilidade de assistir em até 4 dispositivos compatíveis simultaneamente sem custo adicional.</li>
+                            <li className="item-answers"> IMAX Enhanced: disponível para alguns títulos da Marvel em dispositivos compatíveis com o Disney+</li>
+                        </ul>
+</div>
