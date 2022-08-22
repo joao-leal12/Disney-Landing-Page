@@ -4,20 +4,19 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "start": "node server.js", 
+    "start": "node server.js",
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview", 
+    "preview": "vite preview",
     "heroku-postbuild": "npm run build"
   },
-  
-  "engines": { 
+  "engines": {
     "npm": "8.5.0",
     "node": "16.14.1"
   },
-
   "dependencies": {
     "circle-cli": "^1.1.2",
+    "express": "^4.18.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.4.0"
@@ -41,6 +40,4 @@
     "url": "https://github.com/joao-leal12/Landing-Page-Disney-/issues"
   },
   "homepage": "https://github.com/joao-leal12/Landing-Page-Disney-#readme"
-
-
 }
